@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb 17 19:15:08 2019
+
+@author: guochenxin
+"""
+
+import math
+def qesolution(b, c):
+    x1=b-math.sqrt(b*b+c)
+    x2=b+math.sqrt(b*b+c)
+    return x1, x2
+
+
+# unit test:
+def within(eps, a, b):
+    return abs((a - b)/b) <= eps
+
+lst=[]
+for b in range(10, 200, 10):
+    for c in [1]:
+        x1, x2=qesolution(b, c)
+        summ=2*b
+        product=-c
+        result1=x1+x2
+        result2=x1*x2
+        #print(summ)
+        #print(result1)
+        lst.append(within(10**(-12),result1, summ))
+        lst.append(within(10**(-12),result2, product))
+lst
+
+
+# unit test 2: extreme big b and small c
+def within(eps, a, b):
+    return abs((a - b)/b) <= eps
+
+lst=[]
+for b in range(10000, 20000,500):
+    for c in range(1,10):
+        x1, x2=qesolution(b, c)
+        summ=2*b
+        product=-c
+        result1=x1+x2
+        result2=x1*x2
+        #print(summ)
+        #print(result1)
+        lst.append(within(10**(-12),result1, summ))
+        lst.append(within(10**(-12),result2, product))
+        
+lst
+
