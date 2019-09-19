@@ -15,4 +15,5 @@ DBSCAN with Dynamic Time Wrapping
 
 NLP sentiment analysis:
 WordCloud
-TextBlob
+TextBlob: https://textblob.readthedocs.io/en/dev/quickstart.html
+
